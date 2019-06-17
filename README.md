@@ -1,38 +1,13 @@
 # genact
 
-Web desktop docker image for: genact
+docker image for the useful genact tool :-)
+
+Thanks [genact](https://github.com/svenstaro/genact/releases) for making this fantastic tool.
+
 
 # Usage
 
-See `run.sh` and `genact.sh` for examples on how to run the application.
-
-# Exposed Ports
-
-| Port number| Description                                                       |
-| :----------| :-----------------------------------------------------------------|
-| `32000`    | The application runs here                                         |
-|            | |
-
-# Volumes
-
-| Volume path          | Description                                             |
-| :--------------------| :-------------------------------------------------------|
-| | |
-| | |
-
-# Environment variables
-
-| Environment | Description                                        |  Default   |
-| :-----------| :--------------------------------------------------|:-----------|
-| | | |
-| | | |
-
-# Base image configurable settings
-
-Lots of things can be configured through the base image.
-
-See repo [docker-x11webui](https://github.com/IvoNet/docker-x11webui/blob/master/README.md)
-for documentation on the base image.
+See `run.sh` for example on how to run the application.
 
 # For developers
 

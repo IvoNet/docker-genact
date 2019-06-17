@@ -1,17 +1,11 @@
-FROM ivonet/x11webui:latest
+FROM alpine:3.9
 LABEL maintainer="Ivo Woltring - @ivonet"
 
-RUN apt-get update \
- && apt-get install --no-install-recommends -y TODO\
- && apt-get clean \
- && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+COPY startapp.sh /startapp.sh
 
-ARG APP=genact
-ARG USR=user
-ARG PWD=secret
+RUN apk add curl bash\
+ && curl -sL -o /usr/local/bin/genact https://github.com/svenstaro/genact/releases/download/0.7.0/genact-linux \
+ && apk del curl \
+ && chmod +x /usr/local/bin/genact /startapp.sh
 
-ENV APPNAME=$APP      \
-    USERNAME=$USR     \
-    GPASSWORD=$PWD
-
-COPY root/ /
+ENTRYPOINT /startapp.sh

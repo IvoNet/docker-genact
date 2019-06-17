@@ -8,9 +8,10 @@ deploy="false"
 versioning=false
 #versioning=true
 
+OPTIONS=""
 #OPTIONS="$OPTIONS --no-cache"
 #OPTIONS="$OPTIONS --force-rm"
-OPTIONS="$OPTIONS --build-arg APP=genact --build-arg USR=ivonet --build-arg PWD=secret"
+#OPTIONS="$OPTIONS --build-arg APP=genact --build-arg USR=ivonet --build-arg PWD=secret"
 
 docker build ${OPTIONS} -t $docker_name/${image}:latest .
 if [ "$?" -eq 0 ] && [ ${deploy} == "true" ]; then
